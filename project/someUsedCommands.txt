@@ -1,0 +1,13 @@
+php artisan make:model Beers --migration
+php artisan make:model Breweries --migration
+php artisan make:model Ratings --migration
+php artisan make:model Users --migration
+php artisan make:model Roles --migration
+
+php artisan make:controller BeersController
+php artisan make:controller BreweriesController
+
+php artisan make:seeder BeersTableSeeder
+php artisan make:seeder BreweriesTableSeeder
+php artisan make:seeder RatingsTableSeeder
+php artisan make:seeder RolesTableSeeder
