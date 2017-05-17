@@ -13,9 +13,11 @@ class DatabaseSeeder extends Seeder
     {
         // call seeders in right order
         $this->call(RolesTableSeeder::class);
+        $this->call(BreweriesTableSeeder::class);
+
         $this->call(UsersTableSeeder::class);
         $this->call(BeersTableSeeder::class);
-        $this->call(BreweriesTableSeeder::class);
+
         $this->call(RatingsTableSeeder::class);
     }
 }

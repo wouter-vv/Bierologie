@@ -11,7 +11,7 @@ class BreweriesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        DB::table('breweries')->insert([
             'name' => 'Van Steenberge',
             'website' => 'www.vansteenberge.com',
             'location' => 'Ertvelde',
@@ -19,7 +19,7 @@ class BreweriesTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
-        DB::table('users')->insert([
+        DB::table('breweries')->insert([
             'name' => 'Westmalle',
             'website' => 'www.trappistwestmalle.be/',
             'location' => 'Westmalle',
@@ -27,7 +27,7 @@ class BreweriesTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
-        DB::table('users')->insert([
+        DB::table('breweries')->insert([
             'name' => 'Affligem',
             'website' => 'www.affligembeer.com',
             'location' => 'Affligem',
@@ -35,7 +35,7 @@ class BreweriesTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
-        DB::table('users')->insert([
+        DB::table('breweries')->insert([
             'name' => 'Brouwerij Huyghe',
             'website' => 'www.delirium.be',
             'location' => 'Melle',
@@ -43,7 +43,7 @@ class BreweriesTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
-        DB::table('users')->insert([
+        DB::table('breweries')->insert([
             'name' => 'Abdij van Maredsous',
             'website' => 'http://www.maredsousbieres.be/',
             'location' => 'Maredsous',
@@ -51,7 +51,7 @@ class BreweriesTableSeeder extends Seeder
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
-        DB::table('users')->insert([
+        DB::table('breweries')->insert([
             'name' => 'Chimay',
             'website' => 'www.chimay.com',
             'location' => 'Ertvelde',
