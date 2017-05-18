@@ -16,7 +16,7 @@ class CreateBeersTable extends Migration
         Schema::create('beers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('description');
+            $table->text('description');
             $table->enum('type', ['blond', 'tripel', 'quadrupel','dubbel','amber']);
             $table->double('percentage');
             $table->integer('brewery_id')->unsigned();

@@ -16,7 +16,6 @@
     },
     "autoload": {
         "classmap": [
-            "app/controllers/admin",
             "database"
         ],
         "psr-4": {

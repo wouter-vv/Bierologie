@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'kevin.picalausa@odisee.be',
             'location' => 'Gent, Belgium',
             'password' => bcrypt('Azerty123'),
-            'roles_id' => 2,
+            'role_id' => 2,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
@@ -27,7 +27,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'joris.maervoet@odisee.be',
             'location' => 'Rupelmonde, Belgium',
             'password' => bcrypt('Azerty123'),
-            'roles_id' => 2,
+            'role_id' => 2,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
@@ -37,7 +37,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'user@odisee.be',
             'location' => 'Boom, Belgium',
             'password' => bcrypt('Azerty123'),
-            'roles_id' => 1,
+            'role_id' => 1,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);
