@@ -24,6 +24,7 @@ Route::get('/beers/search', 'BeersController@search');
 Route::get('/account', 'Admincontroller@account');
 Route::get('/mybeers', 'Admincontroller@mybeers');
 Route::get('/logout', 'Admincontroller@logout');
+
 Route::get('/mybeers/edit/{id}', 'Admincontroller@edit')->where('id', '[0-9]+');
 Route::post('/mybeers/edit/{id}', 'Admincontroller@update')->where('id', '[0-9]+');
 Route::post('/mybeers/add/{id}', 'Admincontroller@add')->where('id', '[0-9]+');

@@ -40,6 +40,7 @@
                         <li><a href="/account">My account ({{ Auth::user()->firstname . ' ' . Auth::user()->lastname }})</a></li>
                         <li><a href="/logout">Logout</a></li>
                     @else
+                        <li><a href="/register">Register</a></li>
                         <li><a href="/account">Login</a></li>
                     @endif
                 </ul>

@@ -12,15 +12,9 @@
             <dl class="clearfix">
                 <dt>E-mail address</dt>
                 <dd><a href="mailto:{{ $user->email }}">{{ $user->email}}</a></dd>
-                <dt>Website</dt>
-                @if ($user->website)
-                    <dd><a href="http://{{ $author->website }}">{{ $author->website }}</a></dd>
-                @else
-                    <dd><span class="mute">(no website)</span></dd>
-                @endif
                 <dt>Location</dt>
                 <dd>{{ $user->location }}</dd>
-                <dt>Blogposts</dt>
+                <dt>My rated beers</dt>
                 <dd><a href="/mybeers">Show my beers &rarr;</a></dd>
             </dl>
         </article>

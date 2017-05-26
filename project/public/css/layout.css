@@ -123,6 +123,20 @@ table {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+/***********
+REGISTER PAGE
+ ***********/
+
+#login_box_content .form-group input {
+    width: 100%;
+}
+#login_box {
+    margin-left: 0%;
+}
+#login_button {
+    float: left;
+}
 @media (min-width: 767px) {
     table {
         margin-left: 3rem;
@@ -159,6 +173,13 @@ table {
     #loginform .panel-heading{
         padding-top: 20px;
         padding-left: 20px;
+    }
+
+    #login_box_content .form-group input {
+        width: 30%;
+    }
+    #login_box {
+        margin-left: 40%;
     }
 }
 
