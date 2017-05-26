@@ -1,5 +1,5 @@
 {{-- extend the parent tpl --}}
-@extends('master')
+@extends('layouts.master')
 {{-- set the pagetitle in the parent tpl --}}
 @section('title', 'My Blog &raquo; Blogposts')
 

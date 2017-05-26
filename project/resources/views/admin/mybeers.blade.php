@@ -1,5 +1,5 @@
 {{-- extend the parent tpl --}}
-@extends('master')
+@extends('layouts.master')
 {{-- set the pagetitle in the parent tpl --}}
 @section('title', 'My Blog &raquo; Blogposts')
 
@@ -15,7 +15,7 @@
                         @if($mybeers)
                             @forelse($mybeers as $beer)
                                 <tr>
-                                    <th >{{ $beer -> name }}</th>
+                                    <th ><a href="/beers/{{ $beer->id }}">{{ $beer -> name }}</a></th>
                                     <td >{{ $beer->pivot->comment }}</td>
                                     <td>{{ $beer->pivot->score }}/5</td>
                                     <td><a href="{{ @url('mybeers/edit/' . $beer->pivot->id) }}" class="btn btn-primary pull-right"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a></td>

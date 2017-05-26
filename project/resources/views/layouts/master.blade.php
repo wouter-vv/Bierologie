@@ -29,12 +29,6 @@
     <script src="{{ asset('/themes/js/superfish.js') }}"></script>
     <script src="{{ asset('/themes/js/jquery.scrolltotop.js') }}"></script>
 
-
-
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
 <div id="top-bar" class="container">
@@ -61,7 +55,7 @@
                 <ul>
                     <li><a href="/beers">Beer Catalog</a></li>
                     <li><a href="/breweries">Breweries</a></li>
-                    <li><a href="/search">Search</a></li>
+                    <li><a href="/beers/search">Search</a></li>
                     <li><a href="/mybeers">My beers</a></li>
                 </ul>
             </nav>

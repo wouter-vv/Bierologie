@@ -1,12 +1,12 @@
 {{-- extend the parent tpl --}}
-@extends('master')
+@extends('layouts.master')
 {{-- set the pagetitle in the parent tpl --}}
 @section('title', 'My Blog &raquo; Blogposts')
 
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="span12">
+        <div class="span5" id="loginform">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
@@ -48,17 +48,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
+                            <div class="col-md-8 col-md-offset-4 pull-right">
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>

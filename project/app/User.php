@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'pivot.comment', 'pivot.score'
+        'name', 'email', 'password'
     ];
 
     /**
@@ -40,6 +40,6 @@ class User extends Authenticatable
 
     public function rating()
     {
-        return $this->hasMany(Ratings::class);
+        return $this->hasMany(Ratings::class, 'user_id');
     }
 }

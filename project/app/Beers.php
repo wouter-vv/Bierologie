@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Beers extends Model
 {
     protected $table = 'beers';
-    protected $fillable = ['name', 'description', 'pivot.comment', 'pivot.score'];
+    protected $fillable = ['name', 'description'];
 
     public function users()
     {

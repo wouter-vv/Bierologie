@@ -1,5 +1,5 @@
 {{-- extend the parent tpl --}}
-@extends('master')
+@extends('layouts.master')
 {{-- set the pagetitle in the parent tpl --}}
 @section('title', 'My Blog &raquo; Blogposts')
 
@@ -27,20 +27,42 @@
                         </div>
                         @if(Auth::check())
                             @if($rating)
-                                <div class="span5">
+                                <div class="span4">
                                     <div class="panel-body">
                                         <!-- Display Validation Errors -->
                                         @include('common.errors')
                                         <!-- New Blogpost form -->
-                                        {!! Form::open(array('url' => 'mybeers/add' .'/'. $rating->id, 'method' => 'post')) !!}
+                                        {!! Form::open(array('url' => 'mybeers/edit' .'/'. $rating->pivot->id, 'method' => 'post')) !!}
 
                                         <div class="form-group">
-                                            {!! Form::label('score', 'Score (0-5):') !!}
-                                            {!! Form::text('score', $rating->score, array('class' => 'form-control', 'id' => 'edit')) !!}
+                                            {!! Form::label('score', 'Score (1-5):') !!}
+                                            {!! Form::text('score', $rating->pivot->score, array('class' => 'form-control', 'id' => 'edit')) !!}
                                         </div>
                                         <div class="form-group">
                                             {!! Form::label('comment', 'Comment:') !!}
-                                            {!! Form::textarea('comment', $rating->comment, array('class' => 'form-control', 'rows' => '10', 'id' => 'edit')) !!}
+                                            {!! Form::textarea('comment', $rating->pivot->comment, array('class' => 'form-control', 'rows' => '10', 'id' => 'edit')) !!}
+                                        </div>
+                                        <a href="{{ url('/mybeers') }}">Cancel</a>
+                                        {!! Form::submit('submit', array('class' => 'btn btn-primary pull-right')) !!}
+
+                                        {!! Form::close() !!}
+                                    </div>
+                                </div>
+                            @else
+                                <div class="span4">
+                                    <div class="panel-body">
+                                        <!-- Display Validation Errors -->
+                                    @include('common.errors')
+                                    <!-- New Blogpost form -->
+                                        {!! Form::open(array('url' => 'mybeers/add' .'/'. $beer->id, 'method' => 'post')) !!}
+
+                                        <div class="form-group">
+                                            {!! Form::label('score', 'Score (0-5):') !!}
+                                            {!! Form::text('score',"",  array('class' => 'form-control', 'id' => 'edit')) !!}
+                                        </div>
+                                        <div class="form-group">
+                                            {!! Form::label('comment', 'Comment:') !!}
+                                            {!! Form::textarea('comment',"",  array('class' => 'form-control', 'rows' => '10', 'id' => 'edit')) !!}
                                         </div>
                                         <a href="{{ url('/mybeers') }}">Cancel</a>
                                         {!! Form::submit('submit', array('class' => 'btn btn-primary pull-right')) !!}
@@ -89,15 +111,16 @@
                                                 <span class="sale_tag"></span>
                                                 <div class="imagesDiv">
                                                 <p><a href="/beers/{{ $brewerybeer->id }}"><img
-                                                                src="<?php echo asset('img/beers/'.$brewerybeer->id.'.jpg')?>" alt=""/></a></p>
+                                                                src="<?php echo asset('/img/beers/'.$brewerybeer->id.'.jpg')?>" alt=""/></a></p>
                                                 </div>
-                                                <a href="product_detail.html" class="title">{{ $brewerybeer->name }}</a><br/>
-                                                <a href="products.html" class="category">{{ $brewerybeer->type }}</a>
-                                                <p class="price">{{ $brewerybeer->percentage }}%</p>
+                                                <a href="/beers/{{ $beer->id }}" class="title">{{ $brewerybeer->name }}</a><br/>
+                                                <a href="/beers/{{ $beer->id }}" class="category">{{ $brewerybeer->type }}</a>
+                                                <a href="/beers/{{ $beer->id }}"><p class="price">{{ $brewerybeer->percentage }}%</p></a>
                                             </div>
                                         </li>
                                         @endif
-                                    @endforeach
+                                     @endforeach
+                                     <div id="paginationBeers">@include('layouts.pagination', ['paginator' => $brewerybeers])</div>
                                 </ul>
                             </div>
                         </div>
