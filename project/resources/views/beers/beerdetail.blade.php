@@ -96,7 +96,10 @@
                                     </table>
                                 </div>
                             </div>
+
+                            <p id="back"><a href="/beers"> &larr; Back to all beers</a></p>
                         </div>
+
                         <div class="span12">
                             <br>
                             <h4 class="title">

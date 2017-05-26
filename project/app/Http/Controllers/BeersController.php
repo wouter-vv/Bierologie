@@ -32,16 +32,15 @@ class BeersController extends Controller
 
     public function search(Request $request)
     {
+        // types is geen aparte tabel maar een enum
         $typesColl = Beers::all()->pluck('type', 'id');
         $types = [];
-        $idtypes = [];
         array_push($types, "All types");
         foreach ( $typesColl as $type) {
             if(!in_array ($type, $types)) {
                 array_push($types, $type);
             }
         }
-        $request->flash();
 
         $results = Beers::join('breweries','breweries.id', '=', 'brewery_id');
         if ($request->beername) {

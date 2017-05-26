@@ -1,4 +1,14 @@
+* {
+    font-size: 14px;
+}
 
+/***********
+MYBEERS PAGE
+ ***********/
+
+.alert {
+    margin-left: 2rem;
+}
 
 table {
     margin-left: 2rem;
@@ -12,9 +22,7 @@ form {
     margin: 0px;
 }
 
-* {
-    font-size: 14px;
-}
+
 
 #edit {
     width:100%;
@@ -110,6 +118,11 @@ table {
     margin-left: 0rem;
 }
 
+
+#back {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 @media (min-width: 767px) {
     table {
         margin-left: 3rem;
