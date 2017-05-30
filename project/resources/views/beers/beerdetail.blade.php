@@ -56,14 +56,13 @@
                                         {!! Form::open(array('url' => 'mybeers/add' .'/'. $beer->id, 'method' => 'post')) !!}
 
                                         <div class="form-group">
-                                            {!! Form::label('score', 'Score (0-5):') !!}
+                                            {!! Form::label('score', 'Score (1-5):') !!}
                                             {!! Form::text('score',"",  array('class' => 'form-control', 'id' => 'edit')) !!}
                                         </div>
                                         <div class="form-group">
                                             {!! Form::label('comment', 'Comment:') !!}
                                             {!! Form::textarea('comment',"",  array('class' => 'form-control', 'rows' => '10', 'id' => 'edit')) !!}
                                         </div>
-                                        <a href="{{ url('/mybeers') }}">Cancel</a>
                                         {!! Form::submit('submit', array('class' => 'btn btn-primary pull-right')) !!}
 
                                         {!! Form::close() !!}
