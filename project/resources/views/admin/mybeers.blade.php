@@ -1,10 +1,10 @@
 {{-- extend the parent tpl --}}
 @extends('layouts.master')
 {{-- set the pagetitle in the parent tpl --}}
-@section('title', 'My Blog &raquo; Blogposts')
+@section('title', 'Bierologie &raquo; My Beers')
 
 @section('content')
-    <p class="breadcrumb"><a href="{{ url('/')}}/">Bierologie</a> &raquo; Breweries</p>
+    <p class="breadcrumb"><a href="{{ url('/')}}/">Bierologie</a> &raquo; My beers</p>
     <section class="main-content">
         <div class="row">
             <div class="span11">
@@ -33,6 +33,7 @@
                             @empty
                                 <div class="alert alert-warning col-sm-12" role="alert">
                                     <p>You have no rated beers yet!</p>
+                                    <a href="/beers">Rate one now &rarr;</a>
                                 </div>
                             @endforelse
                         @endif

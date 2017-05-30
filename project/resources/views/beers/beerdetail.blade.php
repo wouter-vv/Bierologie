@@ -1,7 +1,7 @@
 {{-- extend the parent tpl --}}
 @extends('layouts.master')
 {{-- set the pagetitle in the parent tpl --}}
-@section('title', 'My Blog &raquo; Blogposts')
+@section('title', 'Bierologie &raquo; Beer')
 
 @section('content')
     <p class="breadcrumb"><a href="{{ url('/')}}/">Bierologie</a> &raquo; <a href="{{ url('/beers')}}/">Beers</a> &raquo; {{ $beer->name }}</p>
@@ -42,7 +42,6 @@
                                             {!! Form::label('comment', 'Comment:') !!}
                                             {!! Form::textarea('comment', $rating->pivot->comment, array('class' => 'form-control', 'rows' => '10', 'id' => 'edit')) !!}
                                         </div>
-                                        <a href="{{ url('/mybeers') }}">Cancel</a>
                                         {!! Form::submit('submit', array('class' => 'btn btn-primary pull-right')) !!}
 
                                         {!! Form::close() !!}

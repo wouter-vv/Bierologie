@@ -5,7 +5,7 @@ use Illuminate\Database\Seeder;
 class BreweriesTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the brewery seeds.
      *
      * @return void
      */

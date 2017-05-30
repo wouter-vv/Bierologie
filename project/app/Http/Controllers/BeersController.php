@@ -10,12 +10,18 @@ use Illuminate\Support\Facades\Auth;
 
 class BeersController extends Controller
 {
+    /**
+     * show an overview of the beers
+     */
     public function show()
     {
         $beers = Beers::orderBy('id', 'asc')->paginate(8);
         return view('beers.beers', array('beers' => $beers));
     }
 
+    /**
+     * show the details of a certain beer
+     */
     public function detail($id)
     {
         // get the beer with its brewery
@@ -30,6 +36,9 @@ class BeersController extends Controller
         return view('beers.beerdetail', ['beer' => $beer,'brewery' => $brewery,'brewerybeers' => $brewerybeers,'rating' => $rating]);
     }
 
+    /**
+     * search (a) beer(s) in the database
+     */
     public function search(Request $request)
     {
         // types is geen aparte tabel maar een enum

@@ -15,6 +15,9 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * get the beers that the user rated
+     */
     public function mybeers()
     {
         $user = Auth::user();
@@ -25,6 +28,9 @@ class AdminController extends Controller
 
     }
 
+    /**
+     * get data about the user
+     */
     public function account()
     {
         $user = Auth::user();
@@ -32,7 +38,9 @@ class AdminController extends Controller
 
     }
 
-
+    /**
+     * logout
+     */
     public function logout()
     {
         Auth::logout();
@@ -41,12 +49,19 @@ class AdminController extends Controller
 
     }
 
+    /**
+     * edit the rating of a beer by a user
+     */
     public function edit($id)
     {
         $rating = Auth::user()->beers->where('pivot.id','=',$id)->first();
         return view('admin.edit', array('rating' => $rating));
 
     }
+
+    /**
+     * update newly rated data in the database
+     */
     public function update(EditRatingRequest $request)
     {
         $rating = Auth::user()->rating
@@ -56,6 +71,9 @@ class AdminController extends Controller
         return redirect('/mybeers');
     }
 
+    /**
+     * add a rating
+     */
     public function add(EditRatingRequest $request)
     {
 
@@ -70,6 +88,9 @@ class AdminController extends Controller
         return redirect('/mybeers');
     }
 
+    /**
+     * remove a rating
+     */
     public function delete(Request $request)
     {
         Auth::user()->rating->where('id','=',$request->id)->first()->delete();

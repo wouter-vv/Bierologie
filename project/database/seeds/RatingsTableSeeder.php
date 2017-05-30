@@ -5,7 +5,7 @@ use Illuminate\Database\Seeder;
 class RatingsTableSeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the rating seeds.
      *
      * @return void
      */

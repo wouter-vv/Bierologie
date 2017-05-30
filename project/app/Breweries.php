@@ -4,6 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Breweries
+ * contains data of all the Breweries
+ * @package App
+ */
 class Breweries extends Model
 {
     protected $table = 'breweries';

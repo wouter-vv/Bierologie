@@ -4,6 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Roles
+ * defines the different roles
+ * @package App
+ */
 class Roles extends Model
 {
     protected $table = 'roles';

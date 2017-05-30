@@ -1,61 +1,49 @@
 {{-- extend the parent tpl --}}
 @extends('layouts.master')
 {{-- set the pagetitle in the parent tpl --}}
-@section('title', 'My Blog &raquo; Blogposts')
+@section('title', 'Bierologie &raquo; Login')
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="span5" id="loginform">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div id="login_box_header">
+                    <h2>
+                        Login
+                    </h2>
+                </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
-                        {{ csrf_field() }}
+                    <div id="login_box_content">
+                        @if (count($errors))
+                            <ul class="alert alert-danger">
+                                @foreach ($errors->all() as $error)
+                                    <li>
+                                        {{ $error }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                        @endif
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                            <div class="col-md-6">
-                                <div class="control-group">
-                                    <div class="controls">
-                                        <input id="email" type="email" class="form-control input-xlarge" name="email" value="{{ old('email') }}" required autofocus>
-                                    </div>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <div class="controls">
-                                    <input id="password" type="password" class="form-control input-xlarge" name="password" required >
-                                </div>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        {!! Form::open(['url' => '/login', 'method' => 'POST']) !!}
+                        <div class="form-group">
+                            <label>
+                                Email
+                            </label>
+                            {!! Form::email('email', null, ['class' => 'form-control', 'id' => 'name_filter', 'placeholder' => 'Email']) !!}
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4 pull-right">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                            </div>
+                            <label>
+                                Password
+                            </label>
+                            {!! Form::password('password', ['class' => 'form-control', 'id' => 'name_filter']) !!}
                         </div>
-                    </form>
+
+                        <button type="submit" id="login_button" class="btn btn-default">Login</button>
+                        {!! Form::close() !!}
+                    </div>
                 </div>
             </div>
         </div>

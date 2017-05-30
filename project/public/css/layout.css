@@ -111,7 +111,6 @@ LOGIN PAGE
 }
 #loginform .panel-heading{
     padding-top: 20px;
-    padding-left: 20px;
     margin-bottom: 5px;
 }
 table {
@@ -120,8 +119,7 @@ table {
 
 
 #back {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem;
 }
 
 /***********
@@ -137,6 +135,10 @@ REGISTER PAGE
 #login_button {
     float: left;
 }
+
+/***********
+RESPONSIVE PAGE
+ ***********/
 @media (min-width: 767px) {
     table {
         margin-left: 3rem;
@@ -170,16 +172,15 @@ REGISTER PAGE
         margin-left: 15%;
         margin-top: 3rem;
     }
-    #loginform .panel-heading{
-        padding-top: 20px;
-        padding-left: 20px;
-    }
 
     #login_box_content .form-group input {
-        width: 30%;
+        width: 50%;
     }
     #login_box {
-        margin-left: 40%;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        margin-bottom: 3rem;
+        margin-left: 3%;
     }
 }
 

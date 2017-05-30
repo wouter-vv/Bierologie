@@ -1,4 +1,7 @@
+{{-- extend the parent tpl --}}
 @extends('layouts.master')
+{{-- set the pagetitle in the parent tpl --}}
+@section('title', 'Bierologie &raquo; Register')
 
 @section('content')
     <div id="galaxyBanner" class="box-fix">
@@ -40,9 +43,9 @@
 
                         <div class="form-group">
                             <label>
-                                Email address
+                                Email
                             </label>
-                            {!! Form::email('email', null, ['class' => 'form-control', 'id' => 'name_filter', 'placeholder' => 'Vb. test@hotmail.com']) !!}
+                            {!! Form::email('email', null, ['class' => 'form-control', 'id' => 'name_filter', 'placeholder' => 'Email']) !!}
                         </div>
 
                         <div class="form-group">
