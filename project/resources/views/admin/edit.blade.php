@@ -6,7 +6,7 @@
 @section('content')
     <!-- Bootstrap Boilerplate... -->
     <div class="row">
-        <div class="span8", id="formedit">
+        <div class="span8", id="formdetails">
             <div class="panel-body">
             <!-- New Blogpost form -->
 

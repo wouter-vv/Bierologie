@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="span12">
                     <div class="row">
-                        <h1 id="beertitle">{{ $beer->name }}</h1>
+                        <h1 id="roomtitle">{{ $beer->name }}</h1>
                         <div class="span4">
                             <a href="#" class="thumbnail" data-fancybox-group="group1"
                                title="Description 1"><img alt="" src="<?php echo asset('img/beers/'.$beer->id.'.jpg')?>"></a>

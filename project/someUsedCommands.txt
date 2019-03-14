@@ -6,14 +6,13 @@ php artisan make:model Roles --migration
 
 php artisan make:controller BeersController
 php artisan make:controller BreweriesController
-php artisan make:controller AdminController
 
 php artisan make:seeder BeersTableSeeder
 php artisan make:seeder BreweriesTableSeeder
 php artisan make:seeder RatingsTableSeeder
 php artisan make:seeder RolesTableSeeder
 
-php artisan make:auth
 
 php artisan migrate
-php artisan db:seed
+
+php artisan db:seed --class=RolesTableSeeder

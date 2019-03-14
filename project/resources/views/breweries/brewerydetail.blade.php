@@ -12,7 +12,7 @@
                 <div class="span9">
                     <div class="row">
                         <div id="brewery">
-                            <h1 id="beertitle">{{ $brewery->name }}</h1>
+                            <h1 id="roomtitle">{{ $brewery->name }}</h1>
                             <div class="span4">
                                 <a href="#" class="thumbnail" data-fancybox-group="group1"
                                    title="Description 1"><img alt="" src="<?php echo asset('img/breweries/'.$brewery->id.'.jpg')?>"></a>
