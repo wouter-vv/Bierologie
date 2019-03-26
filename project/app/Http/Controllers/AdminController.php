@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EditRatingRequest;
 use App\Ratings;
 use Illuminate\Http\Request;
-use App\Http\Requests\EditRatingRequest;
-
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -23,7 +22,6 @@ class AdminController extends Controller
         $user = Auth::user();
         $mybeers = Auth::user()->beers;
 
-
         return view('admin.mybeers', array('user' => $user, 'mybeers' => $mybeers));
 
     }
@@ -34,6 +32,7 @@ class AdminController extends Controller
     public function account()
     {
         $user = Auth::user();
+
         return view('admin.account', array('user' => $user));
 
     }
@@ -54,7 +53,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        $rating = Auth::user()->beers->where('pivot.id','=',$id)->first();
+        $rating = Auth::user()->beers->where('pivot.id', '=', $id)->first();
+
         return view('admin.edit', array('rating' => $rating));
 
     }
@@ -65,8 +65,8 @@ class AdminController extends Controller
     public function update(EditRatingRequest $request)
     {
         $rating = Auth::user()->rating
-                              ->find($request->id)
-                              ->update($request->except('id'));
+            ->find($request->id)
+            ->update($request->except('id'));
 
         return redirect('/mybeers');
     }
@@ -78,10 +78,11 @@ class AdminController extends Controller
     {
 
         $rating = new Ratings();
-        $rating -> user_id = Auth::user()->id;
-        $rating -> beer_id = $request->id;
-        $rating -> score = $request->score;
-        $rating -> comment = $request->comment;
+        $rating->user_id = Auth::user()->id;
+        $rating->beer_id = $request->id;
+        $rating->score = $request->score;
+        $rating->comment = $request->comment;
+
         Auth::user()->rating()
             ->save($rating);
 
@@ -93,7 +94,7 @@ class AdminController extends Controller
      */
     public function delete(Request $request)
     {
-        Auth::user()->rating->where('id','=',$request->id)->first()->delete();
+        Auth::user()->rating->where('id', '=', $request->id)->first()->delete();
 
         return redirect('/mybeers');
 

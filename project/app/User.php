@@ -35,7 +35,8 @@ class User extends Authenticatable
     public function beers()
     {
         return $this->belongsToMany('App\Beers', 'Ratings', 'user_id', 'beer_id')
-            ->withTimestamps()->withPivot('id', 'score', 'comment');
+            ->withTimestamps()
+            ->withPivot('id', 'score', 'comment');
     }
 
     public function role()

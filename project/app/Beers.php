@@ -17,7 +17,8 @@ class Beers extends Model
     public function users()
     {
         return $this->belongsToMany('App\Users', 'Ratings', 'beer_id', 'test_id')
-            ->withTimestamps()->withPivot('id', 'score', 'comment');
+            ->withTimestamps()
+            ->withPivot('id', 'score', 'comment');
     }
 
     public function brewery()
